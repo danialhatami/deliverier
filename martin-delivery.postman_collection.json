@@ -1,0 +1,732 @@
+{
+	"info": {
+		"_postman_id": "44315d21-ce58-44ef-90c8-f27b67b2bb30",
+		"name": "martin-delivery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"p1@test.com\",\r\n    \"password\":\"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Admin Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@test.com\",\r\n    \"password\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 19 Apr 2022 10:52:22 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 19 Apr 2022 10:52:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"1|yGMB2tGab1HbvayhPSMicv4G2cY5tbgtrr9lfxvt\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|ZpOw2FNlNwr2iAZ06KZlwVzKAh9XGAbuuAd5EH4M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Partner\",\r\n    \"email\": \"p1@test.com\",\r\n    \"password\": \"123456789\",\r\n    \"password_confirmed\": \"123456789\",\r\n    \"role\": \"partner\",\r\n    \"national_code\": \"123456\",\r\n    \"company_name\": \"شرکت لارتان\",\r\n    \"webhook_url\": \"https://example.com/webhook\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delivery Man Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Delivery Man\",\r\n    \"email\":\"del1@test.com\",\r\n    \"password\":\"123456789\",\r\n    \"password_confirmed\":\"123456789\",\r\n    \"role\":\"delivery man\",\r\n    \"national_code\" : \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 13:27:28 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 13:27:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"User Created\",\n    \"data\": 200\n}"
+				},
+				{
+					"name": "Partner Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Partner\",\r\n    \"email\": \"p1@test.com\",\r\n    \"password\": \"123456789\",\r\n    \"password_confirmed\": \"123456789\",\r\n    \"role\": \"partner\",\r\n    \"national_code\": \"123456\",\r\n    \"company_name\": \"شرکت لارتان\",\r\n    \"webhook_url\": \"https://example.com/webhook\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 13:33:58 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 13:33:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"User Created\",\n    \"data\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "Submit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|t2ttx3pGVZfwjavkk9nftjITZ4gUW8glD5sfJt29",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender_long\": \"2.1111\",\r\n    \"sender_lat\": \"22.22222\",\r\n    \"sender_address\": \"آدرس فرستنده جدید\",\r\n    \"sender_name\": \"نام فرستنده جدید\",\r\n    \"sender_mobile\": \"09305450090\",\r\n    \"receiver_name\": \"نام گیرنده جدید\",\r\n    \"receiver_mobile\": \"09305450090\",\r\n    \"receiver_address\": \"آدرس گیرنده جدید\",\r\n    \"receiver_long\": \"55.55555\",\r\n    \"receiver_lat\": \"6.666666\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/request/submit",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request",
+						"submit"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sender_long\": \"2.1111\",\r\n    \"sender_lat\": \"22.22222\",\r\n    \"sender_address\": \"آدرس فرستنده جدید\",\r\n    \"sender_name\": \"نام فرستنده جدید\",\r\n    \"sender_mobile\": \"09305450090\",\r\n    \"receiver_name\": \"نام گیرنده جدید\",\r\n    \"receiver_mobile\": \"09305450090\",\r\n    \"receiver_address\": \"آدرس گیرنده جدید\",\r\n    \"receiver_long\": \"55.55555\",\r\n    \"receiver_lat\": \"6.666666\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/request/submit",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"request",
+								"submit"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 13:37:04 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 13:37:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"85225\",\n    \"data\": \"Deliery Request Created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Cancel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|t2ttx3pGVZfwjavkk9nftjITZ4gUW8glD5sfJt29",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/request/85225/cancel",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request",
+						"85225",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|ZpOw2FNlNwr2iAZ06KZlwVzKAh9XGAbuuAd5EH4M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/request/30696/detail",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request",
+						"30696",
+						"detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Requests [Admin]",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|t2ttx3pGVZfwjavkk9nftjITZ4gUW8glD5sfJt29",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/request/all",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Req",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|6LuxBUwIAK7e8bm4vBjTgLmF6C8POBwBXjeSMmyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"delivery_man_lat\":\"5.5555\",\r\n    \"delivery_man_long\":\"6.56666\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/request/30696/accept-delivery",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request",
+						"30696",
+						"accept-delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wait List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|HOYQV5oN6tNFFIyJgwMpqkVfyGe4TwlUqm8CH6OR",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/request/wait-list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request",
+						"wait-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "End - Start Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|6LuxBUwIAK7e8bm4vBjTgLmF6C8POBwBXjeSMmyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/request/99092/end",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request",
+						"99092",
+						"end"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tracing",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|6LuxBUwIAK7e8bm4vBjTgLmF6C8POBwBXjeSMmyU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/request/delivery-man/trace",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request",
+						"delivery-man",
+						"trace"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delivery List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|HOYQV5oN6tNFFIyJgwMpqkVfyGe4TwlUqm8CH6OR",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/request/delivery-man/trace",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request",
+						"delivery-man",
+						"trace"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "default"
+		}
+	]
+}
